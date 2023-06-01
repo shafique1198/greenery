@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "showProduct";
+    
+}
+
+
+
+<h2>showProduct</h2>
+
+<div class="row">
+
+    <div class="col-lg-10 col-md-10 col-sm-10">
+        @if (TempData["msg"] != null)
+        {
+            <div class="alert alert-success" role="alert" style="font-size:large">
+                @TempData["msg"]
+            </div>
+
+        }
+        @if (TempData["total"] == null)
+        {
+
+            <h3>
+                Total Bill: 0 Rs
+            </h3>
+        }
+        else
+        {
+            <h3> Total Bill: @TempData["total"] Rs</h3>
+
+        }
+
+    </div>
+
+
+    <div class="col-lg-2 col-md-2 col-sm-2">
+        <h3 style="font-family:'Arial Rounded MT';text-align:center"> <span class="btn btn-warning">@Html.ActionLink("Check Out", "checkout", "Plants")</span></h3>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="container">
+    <h2 class="text-center">Product List</h2>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4" style="padding:5px; margin:auto; border-radius: 5px; box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) ">
+            <div style="text-align:center;">
+                <h3>@item.plant_name</h3>
+            </div>
+            <div>
+                <div class="col-md-8">
+                    <img src="@Url.Content(item.imagePath)" width="150px" height="150px" />
+
+                </div>
+                <div class="col-md-4" style="text-align:left">
+                    <b>@item.guidance</b>
+                </div>
+            </div>
+            <div class="col-md-8" style="font-size: 18px ; padding: 2px">
+                <b>price:@item.plant_price</b>
+            </div>
+            <div class="col-md-4" style="text-align:right; margin-bottom: 10px;padding:2px">
+                <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> <span class="btn btn-warning">@Html.ActionLink("Add To Cart", "Adtocart", new { id = @item.plant_id })</span></h4>
+            </div>
+
+        </div>
+
+    }
+
+</div>
+

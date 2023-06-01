@@ -1,0 +1,75 @@
+﻿@model greenery.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.userName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Plant.plant_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plant.plant_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_UnitPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_bill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_bill)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderstatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderstatus)
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.order_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

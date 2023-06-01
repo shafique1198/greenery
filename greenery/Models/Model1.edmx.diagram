@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="168e530d955344efbe669059d2790c36" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="DBGreeneryModel.Administratior" Width="1.5" PointX="3.375" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGreeneryModel.Client" Width="1.5" PointX="1" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGreeneryModel.Feedback" Width="1.5" PointX="3.375" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGreeneryModel.Order" Width="1.5" PointX="8.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGreeneryModel.Plant" Width="1.5" PointX="5.625" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="DBGreeneryModel.FK__Feedback__client__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGreeneryModel.FK__Orders__client_i__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGreeneryModel.FK__Orders__plant_id__182C9B23" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBGreeneryModel.sysdiagram" Width="1.5" PointX="5.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

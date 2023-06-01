@@ -1,0 +1,73 @@
+﻿@model IEnumerable<greenery.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plant.plant_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_bill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderstatus)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Client.userName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plant.plant_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Order_UnitPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.quantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Order_bill)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.orderdate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.orderstatus)
+    </td>
+
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.order_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.order_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.order_id })
+    </td>
+</tr>
+}
+
+</table>

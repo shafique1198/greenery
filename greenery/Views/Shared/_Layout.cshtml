@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background: #000000; font-family: Candara; color: white ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Greenery", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a class="nav-link" href="@Url.Action("Index", "Home")" style="font-family: Candara; color: white; font-weight: 500; letter-spacing: 2px; font-size: medium; ">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="@Url.Action("About", "Home")" style="font-family: Candara; color: white; font-weight: 500; letter-spacing: 2px; font-size: medium; ">
+                            About US
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="@Url.Action("ShowProduct", "Plants")" style="font-family: Candara; color: white; font-weight: 500; letter-spacing: 2px; font-size: medium; ">
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="@Url.Action("Feedback", "Feedbacks")" style="font-family: Candara; color: white; font-weight: 500; letter-spacing: 2px; font-size: medium; ">
+                            Feedback
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: Candara; color: white; font-weight: inherit ; font-size: inherit; "><span></span>@User.Identity.Name<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="@Url.Action("Dashboard", "Clients")" style="font-family: Candara; color: black; font-weight: 500; letter-spacing: 2px; font-size: medium;">
+                                        Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("LogOut", "Clients")" style="font-family: Candara; color: black; font-weight: 500; letter-spacing: 2px; font-size: medium;">
+                                        Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    }
+                    else 
+                    {
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-family: Candara; color: white; font-weight: 400; font-size: 20px; "><span></span>Login<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="@Url.Action("UserLogin", "Clients")" style="font-family: Candara; color: black; font-weight: 500; letter-spacing: 2px; font-size: medium;">
+                                    Sign In
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("SignUp", "Clients")" style="font-family: Candara; color: black; font-weight: 500; letter-spacing: 2px; font-size: medium;">
+                                    Sign Up
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Dashboard", "Administratiors")" style="font-family: Candara; color: black; font-weight: 500; letter-spacing: 2px; font-size: medium;">
+                                    Admin
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    }
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+
+            <div class="footer" style="background:white;">
+                <h3 style="color:black; font-size: 30px; ">Greenery</h3>
+                <h5>reserved copyright , 2021</h5>
+            </div>
+            <div class="footerlast">
+
+                <div>
+                    <p>
+                        Location:
+                        <br>
+                        Gulshan-1 Dhaka, Bangladesh
+
+                    </p>
+
+
+                    <p>
+                        Mobile No:
+                        <br>
+                        +1 555 12345
+                    </p>
+
+
+                    <p>
+                        Email:
+                        <br>
+                        <a href="mailto:180104054@aust.edu">180104054@aust.edu</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
+
+<!--
+<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Greenery", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Features", "About", "Home")</li>
+                    <li>@Html.ActionLink("Products", "showProduct", "Plants")</li>
+                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    -->

@@ -1,0 +1,58 @@
+﻿@model greenery.Models.Plant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Plant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.plant_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plant_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plant_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plant_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.guidance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.guidance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagePath)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.plant_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
